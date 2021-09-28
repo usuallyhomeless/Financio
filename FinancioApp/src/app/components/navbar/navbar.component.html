@@ -1,0 +1,20 @@
+<div class="sticky-top">
+  <nav>
+    <div class="logo">
+      <a style="text-decoration: inherit" [routerLink]="''">FINANCIO</a>
+    </div>
+    <div class="text-white" *ngIf="completeUserDetails?.name; else elseBlock">
+      Hello, {{ completeUserDetails?.name }}
+      <a *ngIf="!completeUserDetails?.isadmin" class="d-inline mx-2" style="text-decoration: inherit;" [routerLink]="'dashboard'">Dashboard</a>
+      <a *ngIf="completeUserDetails?.isadmin" class="d-inline mx-2" style="text-decoration: inherit;" [routerLink]="'admin'">Admin Dashboard</a>
+      <a class="d-inline mx-2" style="text-decoration: inherit;" [routerLink]="'change-password'">Change Password</a>      
+      <a class="d-inline mx-2" style="text-decoration: inherit;" (click)="logout()">Logout</a>
+    </div>
+    <ng-template #elseBlock>
+      <ul>
+        <li class="mx-1"><a [routerLink]="'/login'">Login</a></li>
+        <li class="mx-1"><a [routerLink]="'/register'">Register</a></li>
+      </ul>
+    </ng-template>
+  </nav>
+</div>

@@ -1,0 +1,32 @@
+<div class="row mt-4 mb-4 justify-content-center display-4">
+  Admin Dashboard
+</div>
+<div class="container mt-5">
+    <table class="table mt-4 mb-4">
+      <thead class="thead-dark">
+        <tr>
+          <th scope="col"></th>
+          <th scope="col">ID</th>
+          <th scope="col">Name</th>
+          <th scope="col">Username</th>
+          <th scope="col">Email</th>
+          <th scope="col">Status</th>
+          <th scope="col">View Details</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let user of users">
+          <td></td>
+          <td>{{user.id}}</td>
+          <td>{{user.name}}</td>
+          <td>{{user.username}}</td>
+          <td>{{user.email}}</td>
+          <td>
+            <span *ngIf="getcardActivation(user)" class="badge bg-success">&nbsp;</span>
+            <span *ngIf="!getcardActivation(user)" class="badge bg-danger">&nbsp;</span>
+          </td>
+          <td><button type="submit" class="btn btn-primary" [routerLink]="['/completeuserdetails/', user.id]">View Details</button></td>
+        </tr>
+        </tbody>
+    </table>
+  </div>

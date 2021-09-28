@@ -1,0 +1,229 @@
+<div *ngIf="buyResponse" style="position: fixed; top: 20%; left: 50%; transform: translate(-50%, -50%); z-index:100; max-width:80%;">
+    <p>
+        <ngb-alert [type]="buyResponse.status==200 ? 'success' : 'danger'" (closed)="closeAlert()">{{ buyResponse.message }}</ngb-alert>
+    </p>
+</div>
+<div *ngIf="payResponse" style="position: fixed; top: 20%; left: 50%; transform: translate(-50%, -50%); z-index:100; max-width:80%;">
+    <p>
+        <ngb-alert [type]="payResponse.status==200 ? 'success' : 'danger'" (closed)="closeAlert()">{{ payResponse.message }}</ngb-alert>
+    </p>
+</div>
+<div class="container-lg">
+  <div class="row justify-content-center mt-4 mb-4">
+    <p class="h2 text-center">Product Details<p>
+  </div>
+  <div class="row mt-4">
+    <div class="col-12 col-md-8 my-auto">
+      <div class="card border-0">
+        <div class="card-body">
+          <div class="text-center">
+            <h3>{{ product?.productname }}</h3>
+            <img [src]="product?.imageurl" />
+            <h4 class="mt-2"> &#8377; {{ product?.cost}}</h4>
+            <p class="mt-2 text-success">{{ product?.productdetails }}</p>
+            <p class="mt-2 text-success">{{ product?.extrafeatures }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-12 col-md-4 my-auto">
+      <form [formGroup]="buyProductForm">
+        <div *ngIf="checkProductBuy?.status == 200" class="form-row">
+          <div class="form-group">
+              <label>Select EMI Period</label>
+              <div>
+                  <select class="col-12 form-control" formControlName="schemeid" (ngModelChange)="calcEMI()">
+                      <option *ngFor="let schemeobj of allscheme;" [value]="schemeobj.id">{{schemeobj.schemename}}</option>
+                  </select>
+              </div>
+              <small *ngIf="!buyProductForm.controls['schemeid'].valid" class="text-danger">
+                  Select EMI Duration
+              </small>
+          </div>
+        </div>
+        <div class="form-row mt-4">
+          <h5>EMI Starting : {{productEmi}} &#8377; PM</h5>
+        </div>
+        <div *ngIf="debitTransaction" class="form-row mt-3">
+          <small class="text-success">Porduct bought on {{debitTransaction?.transactiondatetime | date:'short'}}. Please Complete the EMI before placing a new order 
+            <br/>
+            <br/>EMI Installment Amount : &#8377; {{debitTransaction?.installmentamount}} 
+            <br/>Last Payment Datetime : {{debitTransaction?.lastpaymentdatetime | date:'short'}}
+            <br/>Total Amount Due : &#8377; {{debitTransaction?.balanceleft}}
+            <br/>
+            <br/>
+          </small>
+        </div>
+        <div class="form-row mt-3">
+          <button *ngIf="checkProductBuy?.status == 200" class="btn btn-success" (click)="open(buynowmodal)" [disabled]="!buyProductForm.valid">Buy Now</button>
+          <button *ngIf="checkProductPay?.status == 200 || checkProductPay?.status == 422" class="btn btn-warning" (click)="open(paynowmodal)" [disabled]="checkProductPay?.status == 422">Pay Now</button>
+          <small class="text-danger my-auto ml-4" *ngIf="checkProductPay?.status == 422" >( EMI for this month has already been paid )</small>
+        </div>
+        <div class="form-row mt-4">
+          <a class="text-primary" [routerLink]="'/termsandconditions'">* Terms and Conditions</a>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- FAQ's -->
+  <div class="row text-center justify-content-center display-3 mt-4">
+    FAQ's
+  </div>
+  <div class="row">    
+    <ngb-accordion #acc="ngbAccordion" [closeOthers]="true" activeIds="ngb-panel-0" class="col-12 mt-4 mb-4">
+      <ngb-panel>
+        <ng-template ngbPanelTitle>
+          <span><h6 class="text-dark">What if I am not completely satisfied with my purchase?</h6></span>
+        </ng-template>
+        <ng-template ngbPanelContent>
+          <b>> </b>We want you to be completely delighted with your purchase.However,in worst case scenario, you are backed by a minimum 6 moth supplier warranty.
+        </ng-template>
+      </ngb-panel>
+      <ngb-panel>
+        <ng-template ngbPanelTitle>
+          <span><h6 class="text-dark">If service center is far away from me then how can I claim a warranty ? </h6></span>
+        </ng-template>
+        <ng-template ngbPanelContent>
+          <b>> </b>You can request pickup or send by packaged delivery.
+        </ng-template>
+      </ngb-panel>
+      <ngb-panel>
+        <ng-template ngbPanelTitle>
+          <span><h6 class="text-dark">Is this item durable ?</h6></span>
+        </ng-template>
+        <ng-template ngbPanelContent>
+          <b>> </b>Yes, it is.
+        </ng-template>
+      </ngb-panel>
+      <ngb-panel>
+        <ng-template ngbPanelTitle>
+          <span><h6 class="text-dark">Is this item easy to use ?</h6></span>
+        </ng-template>
+        <ng-template ngbPanelContent>
+          <b>> </b>Yes. This item has been designed keeping all sort of users in mind.
+        </ng-template>
+      </ngb-panel>
+      <ngb-panel>
+        <ng-template ngbPanelTitle>
+          <span><h6 class="text-dark">Is COD option available for this item ?</h6></span>
+        </ng-template>
+        <ng-template ngbPanelContent>
+          <b>> </b>No. COD is not available with this item.
+        </ng-template>
+      </ngb-panel>
+    </ngb-accordion>
+  </div>
+</div>
+
+
+<!--- buy now modal -->
+<ng-template #buynowmodal let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title">Buy Now</h4>
+    <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <div class="container-lg">
+      <table class="table">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">Title</th>
+            <th scope="col">Particulars</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">Product Name</th>
+            <td>{{product?.productname}}</td>
+          </tr>
+          <tr>
+            <th scope="row">Cost</th>
+            <td>{{product?.cost}} &#8377;</td>
+          </tr>
+          <tr>
+            <th scope="row">EMI Duration</th>
+            <td>{{getSchemeDuration()?.schemename}}</td>
+          </tr>
+          <tr>
+            <th scope="row">EMI Installment per month</th>
+            <td>{{productEmi}} &#8377;</td>
+          </tr>
+          <tr>
+            <th scope="row">Bank Name</th>
+            <td>{{completeUserDetails?.bankname}}</td>
+          </tr>
+          <tr>
+            <th scope="row">Bank Account Number</th>
+            <td>{{completeUserDetails?.accountnumber}}</td>
+          </tr>
+          <tr>
+            <th scope="row">Bank IFSC Code</th>
+            <td>{{completeUserDetails?.ifcscode}}</td>
+          </tr>          
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <div class="modal-footer text-center justify-content-center">
+    <button type="button" class="btn btn-success" (click)="buynow(); modal.close('Save click');">Buy Now</button>
+  </div>
+</ng-template>
+
+<!-- pay now modal -->
+
+<ng-template #paynowmodal let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title">Pay Now</h4>
+    <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <div class="container-lg">
+      <table class="table">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">Title</th>
+            <th scope="col">Particulars</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">Product Name</th>
+            <td>{{product?.productname}}</td>
+          </tr>
+          <tr>
+            <th scope="row">Cost</th>
+            <td>{{product?.cost}} &#8377;</td>
+          </tr>          
+          <tr>
+            <th scope="row">EMI Installment Amount Due</th>
+            <td>{{debitTransaction?.installmentamount}} &#8377;</td>
+          </tr>
+          <tr>
+            <th scope="row">Total amount due</th>
+            <td>{{debitTransaction?.balanceleft}} &#8377;</td>
+          </tr>
+          <tr>
+            <th scope="row">Bank Name</th>
+            <td>{{completeUserDetails?.bankname}}</td>
+          </tr>
+          <tr>
+            <th scope="row">Bank Account Number</th>
+            <td>{{completeUserDetails?.accountnumber}}</td>
+          </tr>
+          <tr>
+            <th scope="row">Bank IFSC Code</th>
+            <td>{{completeUserDetails?.ifcscode}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <div class="modal-footer text-center justify-content-center">
+    <button type="button" class="btn btn-warning" (click)="paynow(); modal.close('Save click');">Pay Now</button>
+  </div>
+</ng-template>

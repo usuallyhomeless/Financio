@@ -1,0 +1,45 @@
+<div *ngIf="serverJsonResponse" style="position: fixed; top: 20%; left: 50%; transform: translate(-50%, -50%); z-index:100; max-width:80%;">
+    <p>
+        <ngb-alert [type]="serverJsonResponse.status==200 ? 'success' : 'danger'" (closed)="closeAlert()">{{ serverJsonResponse.message }}</ngb-alert>
+    </p>
+</div>
+<div class="container-lg">    
+    <div class="row mt-4 mb-4 justify-content-center display-2">
+        Login
+    </div>
+    <div class="row justify-content-center mt-4 mb-4">
+        <form class="col-10" [formGroup]="loginForm" (ngSubmit)="OnSubmit()">
+            <div class="form-row justify-content-center">
+                <div class="form-group col-md-6">
+                    <label for="username">Username</label>
+                    <input type="text" class="form-control" id="username" placeholder="Enter Username here" formControlName="username" [class.is-invalid]="(loginForm.controls['username'].dirty || loginForm.controls['username'].touched) && !loginForm.controls['username'].valid" [class.is-valid]="(loginForm.controls['username'].dirty || loginForm.controls['username'].touched) && loginForm.controls['username'].valid">
+                    <small *ngIf="(loginForm.controls['username'].dirty || loginForm.controls['username'].touched) && !loginForm.controls['username'].valid" class="text-danger">
+                        Enter a valid username with max length of 20 characters.
+                    </small>
+                </div>
+            </div>
+            <div class="form-row justify-content-center">
+                <div class="form-group col-md-6">
+                    <label for="password">Password</label>
+                    <input type="password" class="form-control" id="password" placeholder="Password" formControlName="password" [class.is-invalid]="(loginForm.controls['password'].dirty || loginForm.controls['password'].touched) && !loginForm.controls['password'].valid" [class.is-valid]="(loginForm.controls['password'].dirty || loginForm.controls['password'].touched) && loginForm.controls['password'].valid">
+                    <small *ngIf="(loginForm.controls['password'].dirty || loginForm.controls['password'].touched) && !loginForm.controls['password'].valid" class="text-danger">
+                        Enter a valid password.
+                    </small>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-12 text-center">
+                    <button type="submit" class="btn btn-primary" [disabled]="!loginForm.valid">Login</button>
+                </div>
+            </div>
+            <div class="form-row justify-content-center mt-4">
+                <div class="col-3">
+                    <a [routerLink]="'/register'">Do not have an account? Register here</a>
+                </div>
+                <div class="col-3 text-right">
+                    <a [routerLink]="'/forgot-password'">Forgot Password</a>
+                </div>
+            </div>
+        </form>
+    </div>    
+</div>

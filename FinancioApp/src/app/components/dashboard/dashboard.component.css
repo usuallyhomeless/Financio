@@ -1,0 +1,26 @@
+
+.card{
+    width: 350px; 
+    margin: auto;
+    border: 2px solid black;
+    padding: 10px;
+}
+
+.card-title{
+    text-align: right;
+    color: red;
+}
+
+.card-activated{
+    width: 325px;
+    padding: 5px;
+    text-align: center;
+    background-color: #149414;
+}
+
+.card-deactivated{
+    margin: 0 auto;
+    padding: 10px;
+    width: 325px;
+    background-color: red;
+}

@@ -1,0 +1,135 @@
+<div *ngIf="serverJsonResponse" style="position: fixed; top: 20%; left: 50%; transform: translate(-50%, -50%); z-index:100; max-width:80%;">
+    <p>
+        <ngb-alert [type]="serverJsonResponse.status==200 ? 'success' : 'danger'" (closed)="closeAlert()">{{ serverJsonResponse.message }}</ngb-alert>
+    </p>
+</div>
+<div class="container-lg">    
+    <div class="row mt-4 mb-4 justify-content-center display-2">
+        Register
+    </div>
+    <div class="row justify-content-center mt-4 mb-4">
+        <form class="col-10" [formGroup]="registrationForm" (ngSubmit)="OnSubmit()">
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="name">Name</label>
+                    <input type="text" class="form-control" id="name" placeholder="Enter your full name" formControlName="name" [class.is-invalid]="(registrationForm.controls['name'].dirty || registrationForm.controls['name'].touched) && !registrationForm.controls['name'].valid" [class.is-valid]="(registrationForm.controls['name'].dirty || registrationForm.controls['name'].touched) && registrationForm.controls['name'].valid">
+                    <small *ngIf="(registrationForm.controls['name'].dirty || registrationForm.controls['name'].touched) && !registrationForm.controls['name'].valid" class="text-danger">
+                        Text field containing characters a-z and A-Z with max length 50 required.
+                    </small>
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="dob">Date of Birth</label>
+                    <input type="date" class="form-control" id="dob" placeholder="Date of birth" formControlName="dob" [class.is-invalid]="(registrationForm.controls['dob'].dirty || registrationForm.controls['dob'].touched) && !registrationForm.controls['dob'].valid" [class.is-valid]="(registrationForm.controls['dob'].dirty || registrationForm.controls['dob'].touched) && registrationForm.controls['dob'].valid">
+                    <small *ngIf="(registrationForm.controls['dob'].dirty || registrationForm.controls['dob'].touched) && !registrationForm.controls['dob'].valid" class="text-danger">
+                        Date of Birth with format YYYY-MM-DD required.
+                    </small>
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="email">Email</label>
+                    <input type="email" class="form-control" id="email" placeholder="Email" formControlName="email" [class.is-invalid]="(registrationForm.controls['email'].dirty || registrationForm.controls['email'].touched) && !registrationForm.controls['email'].valid" [class.is-valid]="(registrationForm.controls['email'].dirty || registrationForm.controls['email'].touched) && registrationForm.controls['email'].valid">
+                    <small *ngIf="(registrationForm.controls['email'].dirty || registrationForm.controls['email'].touched) && !registrationForm.controls['email'].valid" class="text-danger">
+                        Enter a valid email with max length of 50 characters.
+                    </small>
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="phone">Phone</label>
+                    <input type="tel" class="form-control" id="phone" placeholder="Phone" formControlName="phone" [class.is-invalid]="(registrationForm.controls['phone'].dirty || registrationForm.controls['phone'].touched) && !registrationForm.controls['phone'].valid" [class.is-valid]="(registrationForm.controls['phone'].dirty || registrationForm.controls['phone'].touched) && registrationForm.controls['phone'].valid">
+                    <small *ngIf="(registrationForm.controls['phone'].dirty || registrationForm.controls['phone'].touched) && !registrationForm.controls['phone'].valid" class="text-danger">
+                        Enter a valid phone number with max length of 13 characters.
+                    </small>
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group col-12">
+                    <label for="username">Username</label>
+                    <input type="text" class="form-control" id="username" placeholder="Enter username here" formControlName="username" [class.is-invalid]="(registrationForm.controls['username'].dirty || registrationForm.controls['username'].touched) && !registrationForm.controls['username'].valid" [class.is-valid]="(registrationForm.controls['username'].dirty || registrationForm.controls['username'].touched) && registrationForm.controls['username'].valid">
+                    <small *ngIf="(registrationForm.controls['username'].dirty || registrationForm.controls['username'].touched) && !registrationForm.controls['username'].valid" class="text-danger">
+                        Enter a valid username with max length of 20 characters.
+                    </small>
+                </div>                
+            </div>
+
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="password">Password</label>
+                    <input type="password" class="form-control" id="password" placeholder="Password" formControlName="password" [class.is-invalid]="(registrationForm.controls['password'].dirty || registrationForm.controls['password'].touched) && !registrationForm.controls['password'].valid" [class.is-valid]="(registrationForm.controls['password'].dirty || registrationForm.controls['password'].touched) && registrationForm.controls['password'].valid">
+                    <small *ngIf="(registrationForm.controls['password'].dirty || registrationForm.controls['password'].touched) && !registrationForm.controls['password'].valid" class="text-danger">
+                        Enter a valid password with minimum eight characters, at least one uppercase and lower case letter, atleast one number and atleast one special character
+                    </small>
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="repassword">Re-enter Password</label>
+                    <input type="password" class="form-control" id="repassword" placeholder="Re-enter Password" formControlName="repassword" [class.is-invalid]="(registrationForm.controls['repassword'].dirty || registrationForm.controls['repassword'].touched) && !registrationForm.controls['repassword'].valid" [class.is-valid]="(registrationForm.controls['repassword'].dirty || registrationForm.controls['repassword'].touched) && registrationForm.controls['repassword'].valid">
+                    <small *ngIf="(registrationForm.controls['repassword'].dirty || registrationForm.controls['repassword'].touched) && !registrationForm.controls['repassword'].valid" class="text-danger">
+                        Re-entered password does'nt match.
+                    </small>
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <label for="address">Address</label>
+                <input type="text" class="form-control" id="address" placeholder="Enter full address here" formControlName="address" [class.is-invalid]="(registrationForm.controls['address'].dirty || registrationForm.controls['address'].touched) && !registrationForm.controls['address'].valid" [class.is-valid]="(registrationForm.controls['address'].dirty || registrationForm.controls['address'].touched) && registrationForm.controls['address'].valid">
+                <small *ngIf="(registrationForm.controls['address'].dirty || registrationForm.controls['address'].touched) && !registrationForm.controls['address'].valid" class="text-danger">
+                    Address with max length of 100 characters required.
+                </small>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group col-md-4">
+                    <label>Card Type</label>
+                    <div class="ml-2" *ngFor="let cardtype of allcardtype"> 
+                        <input class="d-inline" [id]="cardtype.cardname" type="radio" [value]="cardtype.id" formControlName="cardtype"/>
+                        <label class="ml-2 d-inline" [for]="cardtype.cardname">{{cardtype.cardname}}</label>
+                    </div>
+                    <small *ngIf="(registrationForm.controls['cardtype'].dirty || registrationForm.controls['cardtype'].touched) && !registrationForm.controls['cardtype'].valid" class="text-danger">
+                        Select a card type
+                    </small>
+                </div>
+                <div class="form-group col-md-4">
+                    <label>Select Bank</label>
+                    <div>
+                        <select class="col-12 form-control" formControlName="bank" (ngModelChange)="selectbank($event)">
+                            <option *ngFor="let bankobj of allbank;" [value]="bankobj.id">{{bankobj.bankname}}</option>
+                        </select>
+                    </div>
+                    <small *ngIf="(registrationForm.controls['bank'].dirty || registrationForm.controls['bank'].touched) && !registrationForm.controls['bank'].valid" class="text-danger">
+                        Select a bank name
+                    </small>
+                </div>
+                <div class="form-group col-md-4">
+                    <label>Select IFSC</label>
+                    <div>
+                        <select class="col-12 form-control" formControlName="ifsc">
+                            <option *ngFor="let ifscobj of applicableIfsc; let i = index" [value]="ifscobj.id">{{ifscobj.ifsccode}}</option>
+                        </select>
+                    </div>
+                    <small *ngIf="(registrationForm.controls['ifsc'].dirty || registrationForm.controls['ifsc'].touched) && !registrationForm.controls['ifsc'].valid" class="text-danger">
+                        Select IFSC Code
+                    </small>
+                </div>
+            </div>
+            
+            <div class="form-row">
+                <div class="form-group col-12">
+                    <label for="accountnumber">Savings Account Number</label>
+                    <input type="text" class="form-control" id="accountnumber" placeholder="Enter your Savings Account Number" formControlName="accountnumber" [class.is-invalid]="(registrationForm.controls['accountnumber'].dirty || registrationForm.controls['accountnumber'].touched) && !registrationForm.controls['accountnumber'].valid" [class.is-valid]="(registrationForm.controls['accountnumber'].dirty || registrationForm.controls['accountnumber'].touched) && registrationForm.controls['accountnumber'].valid">
+                </div>
+                <small *ngIf="(registrationForm.controls['accountnumber'].dirty || registrationForm.controls['accountnumber'].touched) && !registrationForm.controls['accountnumber'].valid" class="text-danger">
+                    Enter a account number with max length of 30 characters.
+                </small>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-12 text-center">
+                    <button type="submit" class="btn btn-primary" [disabled]="!registrationForm.valid">Submit</button>
+                </div>
+            </div>
+            <div class="form-row text-center justify-content-center mt-4">
+                <a [routerLink]="'/login'">Already have an account ? login here</a>
+            </div>
+        </form>
+    </div>
+</div>

@@ -1,0 +1,19 @@
+<app-carousel></app-carousel>
+
+<div class="container">
+    <div class="row" style="padding: 1%;">
+        <ng-container *ngFor ="let p of products; let i = index">
+            <div class="col">
+                <div class="card mt-4" style="width: 15rem;">
+                        <img class="card-img-top" src="{{p.imageurl}}" alt="Card image cap" style="height: 12rem;">
+                        <div class="card-body">
+                            <h5 class="card-title">{{p.productname}}</h5>
+                            <p class="card-text">{{p.cost | currency:'INR':true}}</p>
+                            <a class="btn btn-primary" [routerLink]="['/products/', p.id]" >Buy Now</a>
+                        </div>
+                </div>
+            </div>
+            <div *ngIf="(i+1) % 4 == 0" class="w-100"></div>
+        </ng-container>
+    </div>
+</div>

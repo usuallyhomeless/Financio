@@ -1,0 +1,91 @@
+<div class="container-lg">
+  <div class="row text-center justify-content-center display-2 mt-4 mb-4">
+    Dashboard
+  </div>
+  <div class="row justify-content-center mt-4 mb-4">
+    <div class="col-11 col-md-6">
+      <div class="card">
+        <div class="card-title">LFI</div>
+        <div class="my-1">Card Number: {{ DashboardDetails?.cardnumber }}</div>
+        <div class="my-1">Name: {{ DashboardDetails?.userName }}</div>
+        <div class="my-1">
+          Valid till: {{ DashboardDetails?.validupto | date }}
+        </div>
+        <div class="my-1">Card type: {{ DashboardDetails?.cardname }}</div>
+        <div
+          class="my-1 text-center"          
+          [class]="DashboardDetails?.isCardActive ? 'card-activated' : 'card-deactivated'"
+          [textContent]="DashboardDetails?.isCardActive ? 'ACTIVATED' : 'INACTIVE'"
+        ></div>
+      </div>
+    </div>
+  </div>
+  <div class="row justify-content-center mt-4 mb-4">
+    <div class="col-11 col-md-6">
+      <table class="table table-bordered">
+        <tr>
+          <th>TOTAL CREDIT:</th>
+          <td class="text-center">
+            {{ DashboardDetails?.totalCredit }} &#8377;
+          </td>
+        </tr>
+        <tr>
+          <th>CREDIT USED:</th>
+          <td class="text-center">{{ getRemainingCredit() }} &#8377;</td>
+        </tr>
+        <tr>
+          <th>REMAINING CREDIT:</th>
+          <td class="text-center">{{ DashboardDetails?.cardLimit }} &#8377;</td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <div class="row text-center justify-content-center mt-4 mb-4">
+    <div class="text-center display-4">Products Purchased</div>    
+    <div *ngIf="DebittransactionDetails!.length > 0" class="col-11 mt-4 mb-4">
+      <table class="table table-bordered">
+        <thead>
+          <tr>            
+            <th scope="col">PRODUCT NAME</th>
+            <th scope="col">AMOUNT PAID</th>
+            <th scope="col">BALANCE</th>
+          </tr>
+        </thead>
+        <tbody *ngIf="DashboardDetails?.isCardActive">
+          <tr *ngFor="let transaction of DebittransactionDetails">            
+            <td>{{ transaction.debitproductname }}</td>
+            <td>{{ transaction.debitamountpaid | currency: "INR" }}</td>
+            <td>{{ transaction.debitbalance | currency: "INR" }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>    
+  </div>
+  <div class="text-center text-danger" *ngIf="DebittransactionDetails!.length == 0">
+    <h4>(No Products Purchased)</h4>
+  </div>
+  <div class="row text-center justify-content-center mt-4 mb-4">
+    <div class="text-center display-4">Recent Transactions</div>
+    <div  *ngIf="CredittransactionDetails!.length > 0" class="col-11 mt-4 mb-4">
+      <table  class="table table-bordered">
+        <thead>
+          <tr>
+            <th scope="col">PRODUCT NAME</th>
+            <th scope="col">DATE</th>
+            <th scope="col">AMOUNT PAID</th>
+          </tr>
+        </thead>
+        <tbody *ngIf="DashboardDetails?.isCardActive">
+          <tr *ngFor="let transaction of CredittransactionDetails">
+            <td>{{ transaction.creditproductname }}</td>
+            <td>{{ transaction.credittransactiondate | date: 'short' }}</td>
+            <td>{{ transaction.creditamountpaid | currency: "INR" }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <div class="text-center text-danger mb-4" *ngIf="CredittransactionDetails!.length == 0">
+    <h4>(No Products Purchased)</h4>
+  </div>
+</div>

@@ -1,0 +1,161 @@
+<div
+  *ngIf="successMessage"
+  style="
+    position: fixed;
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 100;
+    max-width: 80%;
+  "
+>
+  <p>
+    <ngb-alert type="success">{{ successMessage }}</ngb-alert>
+  </p>
+</div>
+<div class="container-lg">
+  <div class="row mt-4 mb-4 justify-content-center display-4">User Details</div>
+  <div class="row justify-content-center mt-4 mb-4">
+    <form class="col-10">
+      <div class="form-row">
+        <div class="form-group col-md-6">
+          <label for="name">Name</label>
+          <input
+            type="text"
+            class="form-control"
+            id="name"
+            value="{{ userdetail?.name }}"
+            readonly
+          />
+        </div>
+        <div class="form-group col-md-6">
+          <label for="dob">Date of Birth</label>
+          <input
+            type="text"
+            class="form-control"
+            id="dob"
+            value="{{ userdetail?.dob | date: 'dd/MM/yyyy' }}"
+            readonly
+          />
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group col-md-6">
+          <label for="email">Email</label>
+          <input
+            type="text"
+            class="form-control"
+            id="email"
+            value="{{ userdetail?.email }}"
+            readonly
+          />
+        </div>
+        <div class="form-group col-md-6">
+          <label for="phone">Phone</label>
+          <input
+            type="text"
+            class="form-control"
+            id="phone"
+            value="{{ userdetail?.phone }}"
+            readonly
+          />
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group col-12">
+          <label for="username">Username</label>
+          <input
+            type="text"
+            class="form-control"
+            id="username"
+            value="{{ userdetail?.username }}"
+            readonly
+          />
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="address">Address</label>
+        <input
+          type="text"
+          class="form-control"
+          id="address"
+          value="{{ userdetail?.address }}"
+          readonly
+        />
+      </div>
+
+      <div class="form-row">
+        <div class="form-group col-md-4">
+          <label>Card Type</label>
+          <div class="ml-2">
+            <input
+              type="text"
+              class="form-control"
+              id="cardtype"
+              value="{{ userdetail?.cardName }}"
+              readonly
+            />
+          </div>
+        </div>
+        <div class="form-group col-md-4">
+          <label>Bank</label>
+          <div>
+            <input
+              type="text"
+              class="form-control"
+              id="bank"
+              value="{{ userdetail?.bankname }}"
+              readonly
+            />
+          </div>
+        </div>
+        <div class="form-group col-md-4">
+          <label>IFSC</label>
+          <div>
+            <input
+              type="text"
+              class="form-control"
+              id="ifsccode"
+              value="{{ userdetail?.ifcscode }}"
+              readonly
+            />
+          </div>
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group col-12">
+          <label for="accountnumber">Savings Account Number</label>
+          <input
+            type="text"
+            class="form-control"
+            id="accountnumber"
+            value="{{ userdetail?.accountnumber }}"
+            readonly
+          />
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group col-12 text-center">
+          <button
+            type="button"
+            class="btn btn-primary mx-2"
+            (click)="activateUser()"
+            [disabled]="userdetail?.isactive"
+          >
+            Activate user
+          </button>
+          <button
+            type="submit"
+            class="btn btn-primary mx-2"
+            [routerLink]="['/admin/']"
+          >
+            Back
+          </button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

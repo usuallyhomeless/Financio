@@ -1,0 +1,2213 @@
+{
+	"info": {
+		"_postman_id": "938cea56-7715-4686-bf63-2dac8e715c35",
+		"name": "Fiancio",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Register",
+			"item": [
+				{
+					"name": "getAllCardType",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:5000/api/cardtypes",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"cardtypes"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "getAllCardType",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:5000/api/cardtypes",
+									"host": [
+										"localhost"
+									],
+									"port": "5000",
+									"path": [
+										"api",
+										"cardtypes"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Server",
+									"value": "Microsoft-IIS/10.0"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "ASP.NET"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 15 Aug 2021 04:04:58 GMT"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"id\": 1,\n        \"cardname\": \"Gold\",\n        \"charge\": 500,\n        \"creditlimit\": 50000,\n        \"card\": []\n    },\n    {\n        \"id\": 2,\n        \"cardname\": \"Titanium\",\n        \"charge\": 1000,\n        \"creditlimit\": 100000,\n        \"card\": []\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "getAllBanks",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:5000/api/banks/",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"banks",
+								""
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "getAllBanks",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:5000/api/banks/",
+									"host": [
+										"localhost"
+									],
+									"port": "5000",
+									"path": [
+										"api",
+										"banks",
+										""
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Server",
+									"value": "Microsoft-IIS/10.0"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "ASP.NET"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 15 Aug 2021 04:05:49 GMT"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"id\": 5,\n        \"bankname\": \"CITI\",\n        \"card\": [],\n        \"ifsc\": []\n    },\n    {\n        \"id\": 1,\n        \"bankname\": \"HDFC\",\n        \"card\": [],\n        \"ifsc\": []\n    },\n    {\n        \"id\": 2,\n        \"bankname\": \"ICICI\",\n        \"card\": [],\n        \"ifsc\": []\n    },\n    {\n        \"id\": 3,\n        \"bankname\": \"KOTAK\",\n        \"card\": [],\n        \"ifsc\": []\n    },\n    {\n        \"id\": 4,\n        \"bankname\": \"SBI\",\n        \"card\": [],\n        \"ifsc\": []\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "getIfscByBankId",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:5000/api/ifscs/getbybankid/2",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"ifscs",
+								"getbybankid",
+								"2"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "getIfscByBankId",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:5000/api/ifscs/getbybankid/2",
+									"host": [
+										"localhost"
+									],
+									"port": "5000",
+									"path": [
+										"api",
+										"ifscs",
+										"getbybankid",
+										"2"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Server",
+									"value": "Microsoft-IIS/10.0"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "ASP.NET"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 15 Aug 2021 04:06:43 GMT"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"id\": 6,\n        \"ifsccode\": \"ICICI001\",\n        \"bankid\": 2,\n        \"bank\": null,\n        \"card\": []\n    },\n    {\n        \"id\": 7,\n        \"ifsccode\": \"ICICI002\",\n        \"bankid\": 2,\n        \"bank\": null,\n        \"card\": []\n    },\n    {\n        \"id\": 8,\n        \"ifsccode\": \"ICICI003\",\n        \"bankid\": 2,\n        \"bank\": null,\n        \"card\": []\n    },\n    {\n        \"id\": 9,\n        \"ifsccode\": \"ICICI004\",\n        \"bankid\": 2,\n        \"bank\": null,\n        \"card\": []\n    },\n    {\n        \"id\": 10,\n        \"ifsccode\": \"ICICI005\",\n        \"bankid\": 2,\n        \"bank\": null,\n        \"card\": []\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "newUserAndCard",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Rahul Umeshkumar Sanghvi\",\r\n    \"phone\": \"07276517951\",\r\n    \"email\": \"rahulsanghvi18@gmail.com\",\r\n    \"username\": \"rahulsanghvi18\",\r\n    \"password\": \"Rahul007@\",\r\n    \"dob\": \"2021-08-13\",\r\n    \"address\": \"C/15 ,BLDG No -5, Kety Nagar, Dahanu Road(w)\",\r\n    \"cardtype\": 1,\r\n    \"bank\": 2,\r\n    \"accountnumber\": \"1234567890\",\r\n    \"ifsc\": 9\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:5000/api/financiousers/createuserandcard",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"financiousers",
+								"createuserandcard"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Username or account or email not unique",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"Rahul Umeshkumar Sanghvi\",\r\n    \"phone\": \"07276517951\",\r\n    \"email\": \"rahulsanghvi18@gmail.com\",\r\n    \"username\": \"rahulsanghvi18\",\r\n    \"password\": \"Rahul007@\",\r\n    \"dob\": \"2021-08-13\",\r\n    \"address\": \"C/15 ,BLDG No -5, Kety Nagar, Dahanu Road(w)\",\r\n    \"cardtype\": 1,\r\n    \"bank\": 2,\r\n    \"accountnumber\": \"1234567890\",\r\n    \"ifsc\": 9\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:5000/api/financiousers/createuserandcard",
+									"host": [
+										"localhost"
+									],
+									"port": "5000",
+									"path": [
+										"api",
+										"financiousers",
+										"createuserandcard"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Server",
+									"value": "Microsoft-IIS/10.0"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "ASP.NET"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 15 Aug 2021 16:34:39 GMT"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 400,\n    \"message\": \"Username or Email or Saving account number not unique internal server error. Try again!\"\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Login",
+			"item": [
+				{
+					"name": "postLogin",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"admin\",\r\n    \"password\": \"adminpass\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/auth/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "password incorrect",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"username\": \"rahulsanghvi18\",\r\n    \"password\": \"Rahul007@\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:5000/api/auth/login",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5000",
+									"path": [
+										"api",
+										"auth",
+										"login"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Server",
+									"value": "Microsoft-IIS/10.0"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "ASP.NET"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 15 Aug 2021 16:20:23 GMT"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 400,\n    \"message\": \"Username or password incorrect\"\n}"
+						},
+						{
+							"name": "login successful",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"username\": \"rahulsanghvi18\",\r\n    \"password\": \"Password123@\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:5000/api/auth/login",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5000",
+									"path": [
+										"api",
+										"auth",
+										"login"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Server",
+									"value": "Microsoft-IIS/10.0"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "ASP.NET"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 15 Aug 2021 16:24:08 GMT"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 200,\n    \"message\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjIiLCJuYmYiOjE2MjkwNDQ2NDgsImV4cCI6MTYyOTA1NTQ0OCwiaWF0IjoxNjI5MDQ0NjQ4fQ.78-aMmXUeSu_rRqK4_1o7IgqkMjNcaM4hdAYq14_oA4\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Isloggedin (Auth)",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{authorization-token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:5000/api/financiousers/isloggedin",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"financiousers",
+								"isloggedin"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Isloggedin (Auth)",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{authorization-token}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "localhost:5000/api/financiousers/isloggedin",
+									"host": [
+										"localhost"
+									],
+									"port": "5000",
+									"path": [
+										"api",
+										"financiousers",
+										"isloggedin"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Server",
+									"value": "Microsoft-IIS/10.0"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "ASP.NET"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 15 Aug 2021 04:33:38 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "36"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 200,\n    \"message\": \"logged in\"\n}"
+						}
+					]
+				},
+				{
+					"name": "getCompleteUserDetails (Auth)",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{authorization-token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:5000/api/financiousers/getuserdetailsbyauth",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"financiousers",
+								"getuserdetailsbyauth"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "getCompleteUserDetails (Auth)",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{authorization-token}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "localhost:5000/api/financiousers/getuserdetailsbyauth",
+									"host": [
+										"localhost"
+									],
+									"port": "5000",
+									"path": [
+										"api",
+										"financiousers",
+										"getuserdetailsbyauth"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Server",
+									"value": "Microsoft-IIS/10.0"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "ASP.NET"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 15 Aug 2021 04:33:25 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "291"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"name\": \"Rahul Umeshkumar Sanghvi\",\n    \"dob\": \"2021-08-13T00:00:00\",\n    \"email\": \"rahulsanghvi18@gmail.com\",\n    \"phone\": \"07276517951\",\n    \"username\": \"rahulsanghvi18\",\n    \"address\": \"C/15 ,BLDG No -5, Kety Nagar, Dahanu Road(w)\",\n    \"cardName\": \"Gold\",\n    \"bankname\": \"HDFC\",\n    \"ifcscode\": \"HDFC002\",\n    \"accountnumber\": \"1234567890\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Change Password",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{authorization-token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"currentPassword\": \"adminpass\",\r\n    \"newPassword\": \"Adminpass123@\",\r\n    \"confirmNewPassword\": \"Adminpass123@\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/financiousers/change-password",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"financiousers",
+								"change-password"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "forget password",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/api/auth/forgot-password/rahulsanghvi18@gmail.com",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"auth",
+								"forgot-password",
+								"rahulsanghvi18@gmail.com"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Succesfull",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:5000/api/auth/forgot-password/rahulsanghvi18@gmail.com",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5000",
+									"path": [
+										"api",
+										"auth",
+										"forgot-password",
+										"rahulsanghvi18@gmail.com"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Server",
+									"value": "Microsoft-IIS/10.0"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "ASP.NET"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 16 Aug 2021 06:26:20 GMT"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 200,\n    \"message\": \"Password reset token send. Please Check your mail\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Reset Password",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"rahulsanghvi18@gmail.com\",\r\n    \"token\": \"6mV/i/xJV2+GidUOjfwQ4w==\",\r\n    \"password\": \"Password321@\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/auth/reset-password",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"auth",
+								"reset-password"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "successful",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"email\": \"rahulsanghvi18@gmail.com\",\r\n    \"token\": \"6mV/i/xJV2+GidUOjfwQ4w==\",\r\n    \"password\": \"Password321@\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:5000/api/auth/reset-password",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5000",
+									"path": [
+										"api",
+										"auth",
+										"reset-password"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Server",
+									"value": "Microsoft-IIS/10.0"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "ASP.NET"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 16 Aug 2021 06:30:03 GMT"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 200,\n    \"message\": \"Operation Successful\"\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Product",
+			"item": [
+				{
+					"name": "ProductList",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:5000/api/products/",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"products",
+								""
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "ProductList",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:5000/api/products/",
+									"host": [
+										"localhost"
+									],
+									"port": "5000",
+									"path": [
+										"api",
+										"products",
+										""
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Server",
+									"value": "Microsoft-IIS/10.0"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "ASP.NET"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 15 Aug 2021 04:19:10 GMT"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"id\": 2,\n        \"productname\": \"Earphones\",\n        \"productdetails\": \"productdetails\",\n        \"cost\": 1000,\n        \"imageurl\": \"assets/images/earphones.jpg\",\n        \"extrafeatures\": \"Colour : Black, Screen size : 4.3 Inches, Display : CRT\",\n        \"debittransaction\": []\n    },\n    {\n        \"id\": 3,\n        \"productname\": \"Retro Television\",\n        \"productdetails\": \"Old Television with no DTH cable slot\",\n        \"cost\": 2000,\n        \"imageurl\": \"assets/images/retrotelevision.jpg\",\n        \"extrafeatures\": \"Colour : Gray, Screen size : 6.1 Inches, OS : IOS 14\",\n        \"debittransaction\": []\n    },\n    {\n        \"id\": 4,\n        \"productname\": \"Phone\",\n        \"productdetails\": \"Iphone with Solid build quality and Excellent display\",\n        \"cost\": 60000,\n        \"imageurl\": \"assets/images/iphone.jpg\",\n        \"extrafeatures\": \"Colour : Black, Model Name : G30 NV, Output : Colour\",\n        \"debittransaction\": []\n    },\n    {\n        \"id\": 5,\n        \"productname\": \"Printer\",\n        \"productdetails\": \"Printer with Full HD Movie Print available\",\n        \"cost\": 10000,\n        \"imageurl\": \"assets/images/printer.jpg\",\n        \"extrafeatures\": \"Colour : Black, Material : Ceramic, Weight : 12000 Grams\",\n        \"debittransaction\": []\n    },\n    {\n        \"id\": 6,\n        \"productname\": \"Microwave oven\",\n        \"productdetails\": \"20-25L capacity oven with 850W power\",\n        \"cost\": 30000,\n        \"imageurl\": \"assets/images/microwave.jpg\",\n        \"extrafeatures\": \"Colour : Black, Lens Type : Zoom, Shooting modes : Manual\",\n        \"debittransaction\": []\n    },\n    {\n        \"id\": 7,\n        \"productname\": \"Camera\",\n        \"productdetails\": \"Single-lens reflex digital camera\",\n        \"cost\": 90000,\n        \"imageurl\": \"assets/images/camera.jpg\",\n        \"extrafeatures\": \"Colour : Silver, Capacity : 6.5 Kg, Warranty : 2 years\",\n        \"debittransaction\": []\n    },\n    {\n        \"id\": 8,\n        \"productname\": \"Washing Machine\",\n        \"productdetails\": \"6Kg Fully Automatic Front Load\",\n        \"cost\": 20000,\n        \"imageurl\": \"assets/images/washingmachine.jpg\",\n        \"extrafeatures\": \"Colour : Black, Voltage : 220 Volts, No. of ports : 7\",\n        \"debittransaction\": []\n    },\n    {\n        \"id\": 9,\n        \"productname\": \"Router\",\n        \"productdetails\": \" 300Mbps ADSL2 Wireless with Modem Router\",\n        \"cost\": 2000,\n        \"imageurl\": \"assets/images/router.jpg\",\n        \"extrafeatures\": \"Colour : Black, Form factor : Freestanding, Brand : Faber\",\n        \"debittransaction\": []\n    },\n    {\n        \"id\": 10,\n        \"productname\": \"Dishwasher\",\n        \"productdetails\": \"45 kg WeightButton Control with Stainless-Steel Basket \",\n        \"cost\": 40000,\n        \"imageurl\": \"assets/images/dishwasher.jpg\",\n        \"extrafeatures\": \"Colour : Black, OS : Windows 10, Processor Count : 4\",\n        \"debittransaction\": []\n    },\n    {\n        \"id\": 11,\n        \"productname\": \"Laptop\",\n        \"productdetails\": \"15.6 Inch, Core i5 8th Gen, 8 GB RAM\",\n        \"cost\": 80000,\n        \"imageurl\": \"assets/images/laptop.jpg\",\n        \"extrafeatures\": \"Colour : Black, Weight : 168 Grams, Control Type : Media\",\n        \"debittransaction\": []\n    },\n    {\n        \"id\": 12,\n        \"productname\": \"Headphones\",\n        \"productdetails\": \"On-the-ear headphone\",\n        \"cost\": 2000,\n        \"imageurl\": \"assets/images/headphones.jpg\",\n        \"extrafeatures\": null,\n        \"debittransaction\": []\n    },\n    {\n        \"id\": 13,\n        \"productname\": \"Smart TV\",\n        \"productdetails\": \"QLED 55 inch Screen UHD TV\",\n        \"cost\": 80000,\n        \"imageurl\": \"assets/images/smarttv.jpg\",\n        \"extrafeatures\": null,\n        \"debittransaction\": []\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "getProductById",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:5000/api/products/2",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"products",
+								"2"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "getProductById",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:5000/api/products/2",
+									"host": [
+										"localhost"
+									],
+									"port": "5000",
+									"path": [
+										"api",
+										"products",
+										"2"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Server",
+									"value": "Microsoft-IIS/10.0"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "ASP.NET"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 15 Aug 2021 04:20:41 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "222"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": 2,\n    \"productname\": \"Earphones\",\n    \"productdetails\": \"productdetails\",\n    \"cost\": 1000,\n    \"imageurl\": \"assets/images/earphones.jpg\",\n    \"extrafeatures\": \"Colour : Black, Screen size : 4.3 Inches, Display : CRT\",\n    \"debittransaction\": []\n}"
+						}
+					]
+				},
+				{
+					"name": "getAllSchemes",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:5000/api/schemes",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"schemes"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "getAllSchemes",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:5000/api/schemes",
+									"host": [
+										"localhost"
+									],
+									"port": "5000",
+									"path": [
+										"api",
+										"schemes"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Server",
+									"value": "Microsoft-IIS/10.0"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "ASP.NET"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 15 Aug 2021 17:09:28 GMT"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"id\": 1,\n        \"schemename\": \"3 Months \",\n        \"schemeduration\": 3,\n        \"debittransaction\": []\n    },\n    {\n        \"id\": 2,\n        \"schemename\": \"6 Months \",\n        \"schemeduration\": 6,\n        \"debittransaction\": []\n    },\n    {\n        \"id\": 3,\n        \"schemename\": \"9 Months \",\n        \"schemeduration\": 9,\n        \"debittransaction\": []\n    },\n    {\n        \"id\": 4,\n        \"schemename\": \"12 Months \",\n        \"schemeduration\": 12,\n        \"debittransaction\": []\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "checkProductBuy (Auth)",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{authorization-token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:5000/api/debittransactions/checkproductbuytransaction/2",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"debittransactions",
+								"checkproductbuytransaction",
+								"2"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "status : 200 -> okay",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{authorization-token}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "localhost:5000/api/debittransactions/checkproductbuytransaction/2",
+									"host": [
+										"localhost"
+									],
+									"port": "5000",
+									"path": [
+										"api",
+										"debittransactions",
+										"checkproductbuytransaction",
+										"2"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Server",
+									"value": "Microsoft-IIS/10.0"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "ASP.NET"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 15 Aug 2021 04:40:02 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "31"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 200,\n    \"message\": \"okay\"\n}"
+						},
+						{
+							"name": "status : 404 -> invalid product, card, user",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{authorization-token}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "localhost:5000/api/debittransactions/checkproductbuytransaction/1",
+									"host": [
+										"localhost"
+									],
+									"port": "5000",
+									"path": [
+										"api",
+										"debittransactions",
+										"checkproductbuytransaction",
+										"1"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Server",
+									"value": "Microsoft-IIS/10.0"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "ASP.NET"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 15 Aug 2021 04:40:57 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "42"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 404,\n    \"message\": \"Invalid Product\"\n}"
+						}
+					]
+				},
+				{
+					"name": "checkProductPay (Auth)",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{authorization-token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:5000/api/debittransactions/checkproductpaytransaction/2",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"debittransactions",
+								"checkproductpaytransaction",
+								"2"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "status: 400 -> no debit transaction",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{authorization-token}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "localhost:5000/api/debittransactions/checkproductpaytransaction/2",
+									"host": [
+										"localhost"
+									],
+									"port": "5000",
+									"path": [
+										"api",
+										"debittransactions",
+										"checkproductpaytransaction",
+										"2"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Server",
+									"value": "Microsoft-IIS/10.0"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "ASP.NET"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 15 Aug 2021 04:45:30 GMT"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 400,\n    \"message\": \"No Debit Transaction found\"\n}"
+						}
+					]
+				},
+				{
+					"name": "buy product (Auth)",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{authorization-token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:5000/api/debittransactions/buyproduct/2/scheme/1",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"debittransactions",
+								"buyproduct",
+								"2",
+								"scheme",
+								"1"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "status: 400 -> already subscribed",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{authorization-token}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "localhost:5000/api/debittransactions/buyproduct/2/scheme/1",
+									"host": [
+										"localhost"
+									],
+									"port": "5000",
+									"path": [
+										"api",
+										"debittransactions",
+										"buyproduct",
+										"2",
+										"scheme",
+										"1"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Server",
+									"value": "Microsoft-IIS/10.0"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "ASP.NET"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 15 Aug 2021 05:22:29 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "45"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 400,\n    \"message\": \"already subscribed\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Pay Product (Auth)",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{authorization-token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:5000/api/credittransactions/repay/product/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"credittransactions",
+								"repay",
+								"product",
+								"2"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Pay Product (Auth)",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{authorization-token}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://localhost:5000/api/credittransactions/repay/product/2",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5000",
+									"path": [
+										"api",
+										"credittransactions",
+										"repay",
+										"product",
+										"2"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Server",
+									"value": "Microsoft-IIS/10.0"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "ASP.NET"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 15 Aug 2021 07:10:28 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "49"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 200,\n    \"message\": \"Transaction Successful\"\n}"
+						}
+					]
+				},
+				{
+					"name": "getCreditTransactionbyAuth (Auth)",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{authorization-token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:5000/api/debittransactions/getdebittransactionbyauth/2",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"debittransactions",
+								"getdebittransactionbyauth",
+								"2"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "getCreditTransactionbyAuth (Auth)",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{authorization-token}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "localhost:5000/api/debittransactions/getcredittransactionbyauth/5",
+									"host": [
+										"localhost"
+									],
+									"port": "5000",
+									"path": [
+										"api",
+										"debittransactions",
+										"getcredittransactionbyauth",
+										"5"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Server",
+									"value": "Microsoft-IIS/10.0"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "ASP.NET"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 15 Aug 2021 08:53:06 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "282"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": 12,\n    \"financiouser\": 23,\n    \"productid\": 5,\n    \"schemeid\": 2,\n    \"transactiondatetime\": \"2021-08-15T12:32:59.893\",\n    \"installmentamount\": 1666.6667,\n    \"lastpaymentdatetime\": null,\n    \"balanceleft\": 10000,\n    \"isactive\": true,\n    \"financiouserNavigation\": null,\n    \"product\": null,\n    \"scheme\": null,\n    \"credittransaction\": []\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Dashboard",
+			"item": [
+				{
+					"name": "getDashboardDetails (Auth)",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{authorization-token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:5000/api/financiousers/dashboard/",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"financiousers",
+								"dashboard",
+								""
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "getDashboardDetails (Auth)",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{authorization-token}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "localhost:5000/api/financiousers/dashboard/",
+									"host": [
+										"localhost"
+									],
+									"port": "5000",
+									"path": [
+										"api",
+										"financiousers",
+										"dashboard",
+										""
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Server",
+									"value": "Microsoft-IIS/10.0"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "ASP.NET"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 15 Aug 2021 04:34:26 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "181"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"userID\": 23,\n    \"userName\": \"Rahul Umeshkumar Sanghvi\",\n    \"cardnumber\": 8,\n    \"validupto\": \"2027-08-13T00:00:00\",\n    \"cardname\": \"Gold\",\n    \"isCardActive\": true,\n    \"totalCredit\": 50000,\n    \"cardLimit\": 50000\n}"
+						}
+					]
+				},
+				{
+					"name": "getDebitTransactions (Auth)",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{authorization-token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:5000/api/debittransactions/list/",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"debittransactions",
+								"list",
+								""
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "getDebitTransactions (Auth)",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{authorization-token}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "localhost:5000/api/debittransactions/list/",
+									"host": [
+										"localhost"
+									],
+									"port": "5000",
+									"path": [
+										"api",
+										"debittransactions",
+										"list",
+										""
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Server",
+									"value": "Microsoft-IIS/10.0"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "ASP.NET"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 15 Aug 2021 04:35:11 GMT"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"userid\": 23,\n        \"debitproductname\": \"Retro Television\",\n        \"debitamountpaid\": 2000,\n        \"debitbalance\": 0\n    },\n    {\n        \"userid\": 23,\n        \"debitproductname\": \"Retro Television\",\n        \"debitamountpaid\": 2000,\n        \"debitbalance\": 0\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "getCreditTransactions",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{authorization-token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:5000/api/credittransactions/list",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"credittransactions",
+								"list"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "getCreditTransactions",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{authorization-token}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "localhost:5000/api/credittransactions/list",
+									"host": [
+										"localhost"
+									],
+									"port": "5000",
+									"path": [
+										"api",
+										"credittransactions",
+										"list"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Server",
+									"value": "Microsoft-IIS/10.0"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "ASP.NET"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 15 Aug 2021 04:36:26 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "711"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"creditproductname\": \"Retro Television\",\n        \"credittransactiondate\": \"2021-08-13T18:13:23.997\",\n        \"creditamountpaid\": 666.6667\n    },\n    {\n        \"creditproductname\": \"Retro Television\",\n        \"credittransactiondate\": \"2021-08-13T18:13:54.08\",\n        \"creditamountpaid\": 666.6667\n    },\n    {\n        \"creditproductname\": \"Retro Television\",\n        \"credittransactiondate\": \"2021-08-13T18:14:26.613\",\n        \"creditamountpaid\": 666.6667\n    },\n    {\n        \"creditproductname\": \"Retro Television\",\n        \"credittransactiondate\": \"2021-08-13T19:11:36.71\",\n        \"creditamountpaid\": 666.6667\n    },\n    {\n        \"creditproductname\": \"Retro Television\",\n        \"credittransactiondate\": \"2021-08-13T19:11:48.14\",\n        \"creditamountpaid\": 666.6667\n    },\n    {\n        \"creditproductname\": \"Retro Television\",\n        \"credittransactiondate\": \"2021-08-13T19:12:30.36\",\n        \"creditamountpaid\": 666.6667\n    }\n]"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "AdminUsersDetails",
+			"item": [
+				{
+					"name": "getallcards (Admin Auth)",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{authorization-token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:5000/api/cards/",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"cards",
+								""
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "getallcards",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{authorization-token}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "localhost:5000/api/cards/",
+									"host": [
+										"localhost"
+									],
+									"port": "5000",
+									"path": [
+										"api",
+										"cards",
+										""
+									]
+								}
+							},
+							"status": "No Content",
+							"code": 204,
+							"_postman_previewlanguage": "plain",
+							"header": [
+								{
+									"key": "Server",
+									"value": "Microsoft-IIS/10.0"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "ASP.NET"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 15 Aug 2021 11:35:29 GMT"
+								}
+							],
+							"cookie": [],
+							"body": null
+						}
+					]
+				},
+				{
+					"name": "getallusers (Admin Auth)",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{authorization-token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:5000/api/financiousers",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"financiousers"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "getallusers",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{authorization-token}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "localhost:5000/api/financiousers",
+									"host": [
+										"localhost"
+									],
+									"port": "5000",
+									"path": [
+										"api",
+										"financiousers"
+									]
+								}
+							},
+							"status": "No Content",
+							"code": 204,
+							"_postman_previewlanguage": "plain",
+							"header": [
+								{
+									"key": "Server",
+									"value": "Microsoft-IIS/10.0"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "ASP.NET"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 15 Aug 2021 11:37:48 GMT"
+								}
+							],
+							"cookie": [],
+							"body": null
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "CompleteUserDetails",
+			"item": [
+				{
+					"name": "getUserDetailsById",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{authorization-token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:5000/api/financiousers/completedetails/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"financiousers",
+								"completedetails",
+								"2"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "not authorized",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{authorization-token}}",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"url": {
+									"raw": "http://localhost:5000/api/financiousers/completedetails/2",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5000",
+									"path": [
+										"api",
+										"financiousers",
+										"completedetails",
+										"2"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Server",
+									"value": "Microsoft-IIS/10.0"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "ASP.NET"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 15 Aug 2021 17:45:38 GMT"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 401,\n    \"message\": \"unauthorized\"\n}"
+						},
+						{
+							"name": "admin authorized",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{authorization-token}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://localhost:5000/api/financiousers/completedetails/2",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5000",
+									"path": [
+										"api",
+										"financiousers",
+										"completedetails",
+										"2"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Server",
+									"value": "Microsoft-IIS/10.0"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "ASP.NET"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 15 Aug 2021 17:47:13 GMT"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"name\": \"Rahul Umeshkumar Sanghvi\",\n    \"dob\": \"2021-08-12T00:00:00\",\n    \"email\": \"rahulsanghvi18@gmail.com\",\n    \"phone\": \"07276517951\",\n    \"username\": \"rahulsanghvi18\",\n    \"address\": \"C/15 ,BLDG No -5, Kety Nagar, Dahanu Road(w)\",\n    \"cardName\": \"Gold\",\n    \"bankname\": \"CITI\",\n    \"ifcscode\": \"CITI001\",\n    \"accountnumber\": \"882798352549\",\n    \"isactive\": false\n}"
+						}
+					]
+				},
+				{
+					"name": "getUserDetails",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:5000/api/financiousers/completedetails/",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"financiousers",
+								"completedetails",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getCardUserById",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/api/cards/user/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"cards",
+								"user",
+								"2"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "getCardUserById",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:5000/api/cards/user/2",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5000",
+									"path": [
+										"api",
+										"cards",
+										"user",
+										"2"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Server",
+									"value": "Microsoft-IIS/10.0"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "ASP.NET"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 15 Aug 2021 17:50:27 GMT"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": 1,\n    \"financiouser\": 2,\n    \"registrationdate\": \"2021-08-15T00:00:00\",\n    \"validupto\": \"2027-08-15T00:00:00\",\n    \"cardlimit\": 50000,\n    \"isactive\": false,\n    \"cardtypeid\": 1,\n    \"bankid\": 5,\n    \"accountnumber\": \"882798352549\",\n    \"ifscid\": 21,\n    \"bank\": null,\n    \"cardtype\": null,\n    \"financiouserNavigation\": null,\n    \"ifsc\": null\n}"
+						}
+					]
+				},
+				{
+					"name": "putUpdateCard",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{authorization-token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 5,\r\n    \"financiouser\": 9,\r\n    \"registrationdate\": \"2021-08-15T00:00:00\",\r\n    \"validupto\": \"2027-08-15T00:00:00\",\r\n    \"cardlimit\": 100000,\r\n    \"isactive\": true,\r\n    \"cardtypeid\": 2,\r\n    \"bankid\": 2,\r\n    \"accountnumber\": \"7276517951022\",\r\n    \"ifscid\": 7,\r\n    \"bank\": null,\r\n    \"cardtype\": null,\r\n    \"financiouserNavigation\": null,\r\n    \"ifsc\": null\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/cards/9",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"cards",
+								"9"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "putUpdateCard",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{authorization-token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"id\": 5,\r\n    \"financiouser\": 9,\r\n    \"registrationdate\": \"2021-08-15T00:00:00\",\r\n    \"validupto\": \"2027-08-15T00:00:00\",\r\n    \"cardlimit\": 100000,\r\n    \"isactive\": true,\r\n    \"cardtypeid\": 2,\r\n    \"bankid\": 2,\r\n    \"accountnumber\": \"7276517951022\",\r\n    \"ifscid\": 7,\r\n    \"bank\": null,\r\n    \"cardtype\": null,\r\n    \"financiouserNavigation\": null,\r\n    \"ifsc\": null\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:5000/api/cards/9",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5000",
+									"path": [
+										"api",
+										"cards",
+										"9"
+									]
+								}
+							},
+							"status": "No Content",
+							"code": 204,
+							"_postman_previewlanguage": "plain",
+							"header": [
+								{
+									"key": "Server",
+									"value": "Microsoft-IIS/10.0"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "ASP.NET"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 15 Aug 2021 18:04:18 GMT"
+								}
+							],
+							"cookie": [],
+							"body": null
+						}
+					]
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "authorization-token",
+			"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjM0IiwibmJmIjoxNjI5MDI3NDQyLCJleHAiOjE2MjkwMzgyNDIsImlhdCI6MTYyOTAyNzQ0Mn0.35wsHwSKm-fbBkr7RqGy4CnTBzE0-KUudLQ2L6ytwqI"
+		}
+	]
+}
